@@ -13,6 +13,7 @@ View the ***PDF*** that was sent to you, to see your challenge
 _To run this repository, you just need:_
 
 * NPM
+* NPX
 * NodeJS
 
 
