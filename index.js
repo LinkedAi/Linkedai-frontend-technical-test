@@ -1,3 +1,4 @@
+
 var house = document.createElement("img");
 house.src = "./src/images/home.png";
 
@@ -24,15 +25,16 @@ let treesobj = { x: 45, y: -800 }
 let guardrail = { y: -800 }
 let enemy = { x: 301, y: 0, type: 'red' }
 let car = { x: 301, y: 701 }
+window.carPosition = car.x
 let speed = 10
 let left = false
 let right = false
 
 
 
-window.onload = function() {
+window.onload = function () {
     initializate()
-  };
+};
 
 
 document.addEventListener("keydown", (e) => {
@@ -130,11 +132,14 @@ function drawLines(number) {
 function drawCar() {
     if (left) {
         car.x = car.x - speed
+        window.carPosition = car.x
     }
     if (right) {
         car.x = car.x + speed
+        window.carPosition = car.x
     }
     ctxCar.drawImage(principal, car.x, car.y)
+
 }
 
 function drawHouse() {
@@ -191,6 +196,6 @@ function drawEnemy() {
 
 }
 
-function getCarPosition(){
+function getCarPosition() {
     return car
 }
